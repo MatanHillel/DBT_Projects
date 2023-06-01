@@ -1,0 +1,22 @@
+
+version: 2
+
+models:
+  - name: dim_aircraft
+    description: "Aircraft information"
+    columns:
+    - name: id
+      description: "The primary key for this table"
+      tests:
+       - unique
+       - not_null
+
+
+sources:
+  - name: dim_stg
+    database: flights_demo
+    schema: stg
+    tables:
+      - name: aircrafts_data
+      - name: seats
+      
