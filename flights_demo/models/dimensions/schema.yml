@@ -11,6 +11,15 @@ models:
        - unique
        - not_null
 
+  - name: dim_airport
+    description: "Airport information"
+    columns:
+    - name: id
+      description: "The primary key for this table"
+      tests:
+       - unique
+       - not_null
+
 
 sources:
   - name: dim_stg
@@ -19,4 +28,5 @@ sources:
     tables:
       - name: aircrafts_data
       - name: seats
+      - name: airports_data
       
