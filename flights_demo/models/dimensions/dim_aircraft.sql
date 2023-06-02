@@ -19,16 +19,15 @@ seat_raw as
 ),
 air_seat as
 (
-select ar.*, 
-sr.seat_no,
-sr.fare_conditions
-from air_raw ar
-inner join seat_raw sr
-	on sr.aircraft_code = ar.aircraft_code
+	select ar.*, 
+	sr.seat_no,
+	sr.fare_conditions
+	from air_raw ar
+	inner join seat_raw sr
+		on sr.aircraft_code = ar.aircraft_code
 )
 select 
 aircraft_code,
-model,
 Model_English,
 Model_Russian,
 range,

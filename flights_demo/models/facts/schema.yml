@@ -1,0 +1,43 @@
+
+version: 2
+
+models:
+  - name: fact_tickets
+    description: "flights information"
+    columns:
+    - name: id
+      description: "The primary key for this table"
+      tests:
+       - unique
+       - not_null
+
+  - name: fact_boarding
+    description: "bording information"
+    columns:
+    - name: ticket_no
+      description: "The primary key for this table"
+      tests:
+       - unique
+       - not_null
+
+  - name: fact_flights
+    description: "flights information"
+    columns:
+    - name: id
+      description: "The primary key for this table"
+      tests:
+       - unique
+       - not_null
+
+
+
+sources:
+  - name: fact_stg
+    database: flights_demo
+    schema: stg
+    tables:
+      - name: flights
+      - name: ticket_flights
+      - name: boarding_passes
+      - name: bookings
+      - name: tickets
